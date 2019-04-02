@@ -49,7 +49,7 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/list/show", name="app_show")
+     * @Route("/project/show", name="app_show")
      * @param string $slug
      * @return Response
      */
