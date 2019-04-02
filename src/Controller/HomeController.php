@@ -47,14 +47,4 @@ class HomeController extends AbstractController
     {
         return $this->render('create.html.twig');
     }
-
-    /**
-     * @Route("/project/show", name="app_show")
-     * @param string $slug
-     * @return Response
-     */
-    public function show(string $slug): Response
-    {
-        return $this->render('project/show.html.twig');
-    }
 }
