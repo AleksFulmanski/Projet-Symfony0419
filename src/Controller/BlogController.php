@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class BlogController extends AbstractController
@@ -61,12 +62,19 @@ class BlogController extends AbstractController
     /**
      * @Route("/formulaire/traitement", name="form_handler")
      * @param Request $request
+     * @param SessionInterface $session
      */
-    public function handleForm(Request $request)
+    public function handleForm(Request $request, SessionInterface $session)
     {
+        var_dump($session);
         $posts = $request->request;
         var_dump($posts);
-        var_dump('le formulaire a été soumis');
+        var_dump('Le formulaire a été soumis');
         die('debug');
+    }
+
+    public function recupSession(Request $request)
+    {
+        $session = $request->getSession();
     }
 }
